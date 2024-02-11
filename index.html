@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="assets/png-transparent-incandescent-light-bulb-computer-icons-symbol-bulb-logo-text-trademark-logo.png"
+      type="image/png"
+    />
+    <title>Culinary Odyssey</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="assets/yummy food.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <!--This is Background Video -->
+    <video autoplay id="myVideo" loop muted onclick="playVideo()">
+      <source src="assets/food background.mp4" type="video/mp4" />
+    </video>
+    <!--This is Background Music -->
+    <audio autoplay loop id="myAudio">
+      <source src="assets/hotel-luxury-music.mp3" type="audio/mp3" />
+    </audio>
+    <!-- 2 Logos -->
+    <header class="container">
+      <a class="logo-1">
+        <img
+          src="assets/VAR SOFT-TECH PRO (1) (1).png"
+          alt=""
+          class="var-logo"
+        />
+      </a>
+      <a class="logo-2">
+        <img src="assets/yummy food.png" alt="" class="yum-food" />
+      </a>
+      <ul>
+        <li><a>Home</a></li>
+        <li><a onclick="contact()">Contact Me</a></li>
+        <li><a onclick="about()" class="login">Know More 😊</a></li>
+      </ul>
+    </header>
+    <div class="Website-Intro">
+      <!-- Intro -->
+    <p>Explore global culinary delights with our diverse recipe collection! Elevate your taste buds with mouthwatering dishes from around the world. Simple yet sensational recipes await you. Start your culinary journey now!</p>
+
+    <!-- Search Button -->
+    </div>
+    <div id="search-box-container">
+      <input
+        type="text"
+        placeholder="Search for food..."
+        id="search-box"
+        style="border: none"
+      />
+      <button
+        type="submit"
+        id="search-button"
+        style="cursor: pointer; border: none"
+      >
+        Search
+      </button>
+    </div>
+    <!-- Random Meal -->
+    <div class="random" id="random-meal-div">
+      <h1>Meal of the hour!</h1>
+    </div>
+
+    <div id="search-food-container"></div>
+
+    <!-- Recipe Instructions -->
+
+    <div id="recipe-details">
+      <img src="assets/Wrong-button.PNG" alt="" id="close-btn" />
+      <img src="assets/youtube pic.PNG" alt="" id="youtube-vid" />
+      <div id="recipe-div-content"></div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    background: black;
+    background-image: linear-gradient(to bottom, #333 2px, transparent 1px), linear-gradient(to right, #333 2px, transparent 1px);
+    background-size: 40px 40px;
+    display: grid;
+    place-items: center;
+}
+
+:root {  
+    --green: rgb(42, 252, 152);
+    --blue: rgb(41, 121, 255);
+}
+
+@keyframes float {
+    from, to {
+        transform: translateY(0%);
+    }
+
+    50% {    
+        transform: translateY(-7%);
+    }
+}
+
+@keyframes background-pan {
+    from {
+        background-position: 1000% center;
+    }
+
+    to {
+        background-position: 0% center;
+    }
+}
+
+.line {
+    display: flex;
+    justify-content: space-between;
+}
+
+.word {
+    color: white;
+    font-size: clamp(3rem, 4vw, 10rem);
+    font-family: "Rubik", sans-serif;
+    margin: 0;
+    text-transform: uppercase;
+    transition: opacity 250ms ease;
+}
+
+#channel-link{
+    color: rgb(0, 115, 255);
+}
+
+#text:has(.fancy:hover) .word:not(.fancy:hover) {
+    opacity: 0.2;
+}
+
+.fancy span {
+    display: inline-block;
+}
+
+.fancy > .outer {
+    transition: transform 1000ms ease;
+}
+
+.fancy:hover > .outer {
+    transition-duration: 730ms;
+}
+
+.fancy:hover > .outer > .inner {
+    animation: float 5s ease infinite;
+}
+
+.fancy:hover > .outer > .inner > .letter {
+    background: linear-gradient(to right, var(--blue), var(--green), var(--blue));
+    background-size: 1000%;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: background-pan 150s linear infinite;
+}
+
+.fancy:hover > .outer:nth-child(1) { transform: translate(-80%, 60%) rotate(8deg); }
+.fancy:hover > .outer:nth-child(2) { transform: translate(-40%, 20%) rotate(4deg); }
+.fancy:hover > .outer:nth-child(3) { transform: translate(-10%, 60%) rotate(-6deg); }
+.fancy:hover > .outer:nth-child(4) { transform: translate(0%, 8%) rotate(-8deg); }
+.fancy:hover > .outer:nth-child(5) { transform: translate(0%, -20%) rotate(5deg); }
+.fancy:hover > .outer:nth-child(6) { transform: translate(0%, 20%) rotate(-3deg); }
+.fancy:hover > .outer:nth-child(7) { transform: translate(0%, -40%) rotate(-5deg); }
+.fancy:hover > .outer:nth-child(8) { transform: translate(0%, 15%) rotate(10deg); }
+.fancy:hover > .outer:nth-child(9) { transform: translate(0%, -50%) rotate(8deg); }
+
+#prev-page-btn{
+    position: relative;
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    font-weight: bolder;
+    cursor: pointer;
+    border: 2px solid aqua;
+    background: transparent;
+    color: whitesmoke;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-left: 400px;
+    margin-top: 70px;
+}
+
+.btn-span {
+    background: aqua;
+    height: 100%;
+    width: 0;
+    transition: 0.5s;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+}
+
+button:hover span {
+    width: 100%;
+}
+
+@media only screen and (max-width: 600px) and (min-width: 320px) {
+    body {
+        height: auto;
+        overflow: visible;
+        background-size: 20px 20px; 
+    }
+
+    #cursor,
+    .mypic {
+        display: none; 
+    }
+
+    #text {
+        text-align: center; 
+        margin-top: 20vh; 
+    }
+
+    .word {
+        font-size: 8vw; 
+    }
+
+    #prev-page-btn {
+        width: 80%;
+        margin: 20px auto; 
+        margin-left: 10%; 
+    }
+}
